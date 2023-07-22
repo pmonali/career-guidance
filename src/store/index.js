@@ -1,9 +1,24 @@
 import { createStore } from "vuex";
 
-export default createStore({
-  state: {},
-  getters: {},
-  mutations: {},
-  actions: {},
-  modules: {},
+const store = createStore({
+  state() {
+    return {
+      loggedIn: false,
+      firstName: "",
+      email: "",
+    };
+  },
+  mutations: {
+    setLoggedIn(state, value) {
+      state.loggedIn = value;
+    },
+    setUsername(state, value) {
+      state.firstName = value;
+    },
+    setEmail(state, value) {
+      state.email = value; // Corrected from state.firstName = value
+    },
+  },
 });
+
+export default store;
